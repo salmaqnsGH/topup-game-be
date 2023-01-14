@@ -48,7 +48,7 @@
                       <div class="form-group">
                         <label>Nominal</label>
                         <div class="select2-purple">
-                          <select class="form-control select2" multiple="multiple" data-placeholder="Pilih nominal" style="width: 100%;" name="nominal" required>
+                          <select class="form-control select2" multiple="multiple" data-placeholder="Pilih nominal" style="width: 100%;" name="nominals" required>
                             <% nominals.forEach(nominal=>{ %>
                               <option value="<%= nominal._id %>"><%= nominal.coinName %> <%= nominal.price %></option>
                             <% }) %>

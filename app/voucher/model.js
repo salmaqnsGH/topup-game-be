@@ -17,14 +17,14 @@ let voucherSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref:'Category'
     },
-    nominals:{
+    nominals:[{
         type: mongoose.Schema.Types.ObjectId,
         ref:'Nominal'
-    },
+    }],
     user:{
         type: mongoose.Schema.Types.ObjectId,
         ref:'User'
     },
-})
+}, {timestamps:true})
 
 module.exports = mongoose.model('Voucher', voucherSchema)
