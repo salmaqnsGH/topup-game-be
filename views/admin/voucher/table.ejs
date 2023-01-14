@@ -29,7 +29,7 @@
         </td>
         <td>
           <form style="display: inline-block" action="/voucher/status/<%= voucher[i]._id %>?_method=PUT" method="post">
-            <button class="<%= (voucher[i].status == 'Y')? 'btn btn-info btn-sm':'btn btn-danger' %>">
+            <button class="<%= (voucher[i].status == 'Y')? 'btn btn-info btn-sm':'btn btn-danger btn-sm' %>">
               <% if(voucher[i].status == 'Y'){ %> Matikan <% }else{ %> Hidupkan <% } %>
             </button>
           </form>
