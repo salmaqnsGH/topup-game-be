@@ -33,7 +33,7 @@
               <% if(voucher[i].status == 'Y'){ %> Matikan <% }else{ %> Hidupkan <% } %>
             </button>
           </form>
-          <form style="display: inline-block" action="/voucher/hapus/<%= voucher[i]._id %>?_method=DELETE" method="post">
+          <form style="display: inline-block" action="/voucher/delete/<%= voucher[i]._id %>?_method=DELETE" method="post">
             <a href="/voucher/edit/<%= voucher[i]._id %>" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i> ubah</a>
             <button class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> hapus</button>
           </form>
