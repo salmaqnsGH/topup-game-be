@@ -1,0 +1,36 @@
+
+<div class="card-body">
+<table id="example2" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Type</th>
+            <th>Banks</th>
+            <th>Status</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(let i=0; i<payment.length; i++){ %>
+        <tr>
+            <td><%= i+1 %></td>
+            <td><%= payment[i].type %></td>
+            <td>
+                <% payment[i].banks.forEach(bank=>{ %>
+                    <span class="badge badge-info badge-pill"><%= bank.bankName %> - <%= bank.name %></span>
+                    <% }) %>
+            </td>
+            <td><%= payment[i].status %></td>
+            <td class="d-flex">
+                <a href="/payment/edit/<%= payment[i]._id %>" class="btn btn-sm btn-warning"><i class="fas fa-pencil-alt"></i> ubah</a>
+                <form action="/payment/delete/<%= payment[i]._id %>?_method=DELETE" method="post">
+                    <button class="btn btn-sm btn-danger ml-2"><i class="fas fa-trash"></i> hapus</button>
+                </form>
+                
+            </td>
+        </tr>
+        <% } %>
+    </tbody>
+
+</table>
+</div>
