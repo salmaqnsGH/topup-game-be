@@ -78,14 +78,14 @@ module.exports={
         try{
             const {id} = req.params
             let category = await Category.find()
-            const nominal = await Nominal.find()
+            const nominals = await Nominal.find()
             const voucher = await Voucher.findOne({_id:id})
             .populate('category')
             .populate('nominals')
             console.log(voucher)
             res.render('admin/voucher/edit',{ 
                 voucher, 
-                nominal, 
+                nominals, 
                 category,
             })
         }catch(err){

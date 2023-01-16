@@ -47,7 +47,7 @@
                   <label>Nominal</label>
                   <div class="select2-purple">
                   <select class="form-control select2" multiple="multiple" data-placeholder="Pilih nominal" style="width: 100%;" name="nominals" required>
-                    <% nominal.forEach(nominal=>{ %>
+                    <% nominals.forEach(nominal=>{ %>
                     <option value="<%= nominal._id %>" <% voucher.nominals.forEach(voucherNominal=>{ %>
                       <%= (nominal._id.toString() === voucherNominal._id.toString())?"selected":"" %>
                       <% })%>
