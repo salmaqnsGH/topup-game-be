@@ -40,12 +40,14 @@
         </td>
         <td><%= transaction[i]?.player?.name ?? '-' %></td>
         <td>
+          <% if(transaction[i].status === 'pending'){ %>
           <form style="display: inline-block" action="/transaction/status/<%= transaction[i]._id %>?status=success&_method=PUT" method="post">
             <button class="btn btn-sm btn-success"><i class=""></i> terima</button>
           </form>
           <form style="display: inline-block" action="/transaction/status/<%= transaction[i]._id %>?status=failed&_method=PUT" method="post">
             <button class="btn btn-sm btn-danger"><i class=""></i> tolak</button>
           </form>
+          <% } %>
         </td>
       </tr>
       <% } %>
