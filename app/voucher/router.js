@@ -3,7 +3,9 @@ var router = express.Router();
 const { index, viewCreate, actionCreate, viewEdit, actionEdit, actionDelete, actionStatus } = require('./controller')
 const multer = require('multer')
 const os = require('os')
+const {isLoginAdmin} = require('../middlewares/auth')
 
+router.use(isLoginAdmin)
 /* GET home page. */
 router.get('/', index);
 router.get('/create', viewCreate);

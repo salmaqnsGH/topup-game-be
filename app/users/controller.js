@@ -8,7 +8,14 @@ module.exports={
             const alertStatus = req.flash('alertStatus')
             const alert = { message: alertMessage, status: alertStatus }
 
-            res.render('admin/users/view_signin', {alert})
+            if(req.session.user === null || req.session.user === undefined){
+                res.render('admin/users/view_signin',{
+                    alert,
+                    title: "Halaman Sign In"
+                })
+            }else{
+                res.redirect('/dashboard')
+            }
         }catch(err){
             req.flash('alertMessage', `${err.message}`)
             req.flash('alertStatus', 'danger')
@@ -24,6 +31,13 @@ module.exports={
                 if(getUser.status === 'Y'){
                     const checkPassword = await bcrypt.compare(password, getUser.password)
                     if(checkPassword){
+                        //simpan session
+                        req.session.user={
+                            id: getUser.id,
+                            name: getUser.name,
+                            email: getUser.email,
+                            status: getUser.status,
+                        }
                         res.redirect('/dashboard')
                     }else{
                         req.flash('alertMessage', "kata sandi salah")
