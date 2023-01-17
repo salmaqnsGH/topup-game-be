@@ -13,7 +13,7 @@ module.exports={
             const alert = { message: alertMessage, status: alertStatus }
 
             const voucher = await Voucher.find().populate('category').populate('nominals')
-            res.render('admin/voucher/view_voucher', {voucher,alert})
+            res.render('admin/voucher/view_voucher', {voucher,alert, name: req.session.user.name, title: "Voucher"})
         }catch(err){
             req.flash('alertMessage', `${err.message}`)
             req.flash('alertStatus', 'danger')
@@ -24,7 +24,7 @@ module.exports={
         try{
             let categories = await Category.find()
             let nominals = await Nominal.find()
-            res.render('admin/voucher/create',{ categories, nominals })
+            res.render('admin/voucher/create',{ categories, nominals, name: req.session.user.name, title: "Tambah Voucher" })
         }catch(err){
             req.flash('alertMessage', `${err.message}`)
             req.flash('alertStatus', 'danger')
@@ -87,6 +87,8 @@ module.exports={
                 voucher, 
                 nominals, 
                 category,
+                name: req.session.user.name, 
+                title: "Edit Voucher"
             })
         }catch(err){
             req.flash('alertMessage', `${err.message}`)
