@@ -13,6 +13,6 @@ let bankSchema = mongoose.Schema({
         type:String,
         require:[true,'Nama rekening harus diisi']
     }
-})
+},{timestamps:true})
 
 module.exports = mongoose.model('Bank', bankSchema)
