@@ -18,7 +18,10 @@ const transactionRouter = require('./app/transaction/router');
 const playerRouter = require('./app/player/router')
 const authRouter = require('./app/auth/router')
 
-const app = express();
+const cors = require('cors')
+const app = express()
+app.use(cors())
+
 const URL = '/api/v1'
 
 // view engine setup
