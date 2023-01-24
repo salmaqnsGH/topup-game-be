@@ -26,7 +26,6 @@ module.exports = {
 		try {
 			const { email, password } = req.body;
 			const getUser = await User.findOne({ email: email });
-			console.log(getUser);
 			if (getUser) {
 				if (getUser.status === "Y") {
 					const checkPassword = await bcrypt.compare(password, getUser.password);
@@ -63,5 +62,49 @@ module.exports = {
 	actionLogout: async (req, res) => {
 		req.session.destroy();
 		res.redirect("/");
+	},
+	viewSignup: async (req, res) => {
+		try {
+			const alertMessage = req.flash("alertMessage");
+			const alertStatus = req.flash("alertStatus");
+			const alert = { message: alertMessage, status: alertStatus };
+
+			if (req.session.user === null || req.session.user === undefined) {
+				res.render("admin/users/view_signup", {
+					alert,
+					title: "Halaman Sign Up",
+				});
+			} else {
+				res.redirect("/dashboard");
+			}
+		} catch (err) {
+			req.flash("alertMessage", `${err.message}`);
+			req.flash("alertStatus", "danger");
+			res.redirect("/signup");
+		}
+	},
+	actionSignup: async (req, res, next) => {
+		try {
+			const payload = req.body;
+			let user = await User.findOne({ email: payload.email });
+
+			if (user) {
+				req.flash("alertMessage", `${payload.email} sudah terdaftar`);
+				req.flash("alertStatus", "danger");
+				res.redirect("/signup");
+			} else {
+				let newUser = await User(payload);
+				await newUser.save();
+
+				req.flash("alertMessage", "Berhasil registrasi");
+				req.flash("alertStatus", "success");
+
+				res.redirect("/");
+			}
+		} catch (err) {
+			req.flash("alertMessage", `${err.message}`);
+			req.flash("alertStatus", "danger");
+			res.redirect("/signup");
+		}
 	},
 };

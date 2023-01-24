@@ -6,10 +6,25 @@
 			<p class="h1"><b>Admin</b><br />Topup Game</p>
 		</div>
 		<div class="card-body">
-			<p class="login-box-msg">Sign in to start your session</p>
-
-			<form action="/" method="post">
+			<p class="login-box-msg">Sign up new account</p>
+			<form action="/signup" method="post">
 				<%-include ../../partials/message.ejs %>
+				<div class="input-group mb-3">
+					<input name="name" type="text" class="form-control" placeholder="name" />
+					<div class="input-group-append">
+						<div class="input-group-text">
+							<span class="fas fa-envelope"></span>
+						</div>
+					</div>
+				</div>
+				<div class="input-group mb-3">
+					<input name="phoneNumber" type="number" class="form-control" placeholder="phoneNumber" />
+					<div class="input-group-append">
+						<div class="input-group-text">
+							<span class="fas fa-envelope"></span>
+						</div>
+					</div>
+				</div>
 				<div class="input-group mb-3">
 					<input name="email" type="email" class="form-control" placeholder="Email" />
 					<div class="input-group-append">
@@ -29,15 +44,11 @@
 				<div class="row">
 					<!-- /.col -->
 					<div class="col-4">
-						<button type="submit" class="btn btn-primary btn-block">Sign In</button>
+						<button type="submit" class="btn btn-primary btn-block">Sign Up</button>
 					</div>
 					<!-- /.col -->
 				</div>
 			</form>
-
-			<p class="mb-0">
-				<a href="/signup" class="text-center">Register a new membership</a>
-			</p>
 		</div>
 		<!-- /.card-body -->
 	</div>
