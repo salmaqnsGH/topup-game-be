@@ -28,7 +28,7 @@ module.exports = {
 				.populate("nominals")
 				.populate("user", "_id name phoneNumber");
 
-			const payment = await Payment.find();
+			const payment = await Payment.find().populate("banks");
 
 			if (!detail) {
 				return res.status(404).json({ message: "detail game tidak ditemukan" });
