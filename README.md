@@ -20,7 +20,7 @@ This Node.js backend project supports a top-up game app and its admin dashboard.
   - MongoDB (https://docs.mongodb.com/manual/installation/)
 
 2. Clone the repository: 
-    `git clone https://github.com/[YOUR-USERNAME]/[YOUR-PROJECT-NAME].git`
+    `git clone https://github.com/salmaqnsGH/topup-game-be.git`
 
 3. Install dependencies: 
     `npm install`
