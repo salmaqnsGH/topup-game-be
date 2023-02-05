@@ -71,7 +71,7 @@ Click on your username onthe top right button then click "Logout" button to log 
 
 ## API Documentation
 
-## Using the APIs
+#### Using the APIs
 
 The following APIs are available in this project:
 
