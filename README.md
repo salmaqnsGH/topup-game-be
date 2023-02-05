@@ -39,34 +39,34 @@ This Node.js backend project supports a top-up game app and its admin dashboard.
 ## Usage
 
 1. Register: 
-Click on the "Register a new membership" button and fill out the registration form.
+    Click on the "Register a new membership" button and fill out the registration form.
 
 2. Login: 
-Use your email and password to log in.
+    Use your email and password to log in.
 
 3. Admin Dashboard: 
-Access statistics, and track progress.
+    Access statistics and track progress.
 
-3. Kategori: 
-Manage game category
+4. Kategori: 
+    Manage game category
 
-3. Nominal: 
-Manage game coin
+5. Nominal: 
+    Manage game coin
 
-3. Voucher: 
-Manage game voucher
+6. Voucher: 
+    Manage game voucher
 
-3. Bank: 
-Manage bank account for payment destination
+7. Bank: 
+    Manage bank account for payment destination
 
-3. Pembayaran: 
-Manage payment category
+8. Pembayaran: 
+    Manage payment category
 
-3. Transaksi: 
-Validate transaction
+9. Transaksi: 
+    Validate transaction
 
-6. Logout: 
-Click on your username onthe top right button then click "Logout" button to log out of the application.
+10. Logout: 
+    Click on your username onthe top right button then click "Logout" button to log out of the application.
 
 
 ## API Documentation
@@ -76,19 +76,19 @@ Click on your username onthe top right button then click "Logout" button to log 
 The following APIs are available in this project:
 
 1. User authentication API
-    * POST `/api/v1/auth/signup`: Register a new user.
-    * POST `/api/v1/auth/signin`: Log in an existing user.
+         - POST `/api/v1/auth/signup`: Register a new user.
+         - POST `/api/v1/auth/signin`: Log in an existing user.
 
 2. Category
-    * GET `/api/v1/players/category`: Get game categories
+         - GET `/api/v1/players/category`: Get game categories
 
 3. Profile
-    * GET `/api/v1/players/profile`: Get user profile (Note: This action requires a valid JSON Web Token (JWT), so the user must first log in.)
-    * PUT `/api/v1/players/profile`: Edit user profile (Note: This action requires a valid JSON Web Token (JWT), so the user must first log in.)
+         - GET `/api/v1/players/profile`: Get user profile (Note: This action requires a valid JSON Web Token (JWT), so the user must first log in.)
+         - PUT `/api/v1/players/profile`: Edit user profile (Note: This action requires a valid JSON Web Token (JWT), so the user must first log in.)
 
 4. History
-    * GET `/api/v1/players/history?status=pending`: Get tansaction histories (Note: This action requires a valid JSON Web Token (JWT), so the user must first log in.)
-    * GET `/api/v1/players/history/[id]`: Get detail tansaction history (Note: This action requires a valid JSON Web Token (JWT), so the user must first log in.)
+         - GET `/api/v1/players/history?status=pending`: Get tansaction histories (Note: This action requires a valid JSON Web Token (JWT), so the user must first log in.)
+         - GET `/api/v1/players/history/[id]`: Get detail tansaction history (Note: This action requires a valid JSON Web Token (JWT), so the user must first log in.)
 
 You can find more details on how to use these APIs, including the request and response formats, in the [API Documentation](https://documenter.getpostman.com/view/14858801/UVC2HpMb).
 
