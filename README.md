@@ -71,7 +71,29 @@ Click on your username onthe top right button then click "Logout" button to log 
 
 ## API Documentation
 
-You can find the Postman API documentation for this project here: https://documenter.getpostman.com/view/14858801/UVC2HpMb
+## Using the APIs
+
+The following APIs are available in this project:
+
+1. User authentication API
+    * POST `/api/v1/auth/signup`: Register a new user.
+    * POST `/api/v1/auth/signin`: Log in an existing user.
+
+2. Category
+    * GET `/api/v1/players/category`: Get game categories
+
+3. Profile
+    * GET `/api/v1/players/profile`: Get user profile (Note: This action requires a valid JSON Web Token (JWT), so the user must first log in.)
+    * PUT `/api/v1/players/profile`: Edit user profile (Note: This action requires a valid JSON Web Token (JWT), so the user must first log in.)
+
+4. History
+    * GET `/api/v1/players/history?status=pending`: Get tansaction histories (Note: This action requires a valid JSON Web Token (JWT), so the user must first log in.)
+    * GET `/api/v1/players/history/[id]`: Get detail tansaction history (Note: This action requires a valid JSON Web Token (JWT), so the user must first log in.)
+
+You can find more details on how to use these APIs, including the request and response formats, in the [API Documentation](https://documenter.getpostman.com/view/14858801/UVC2HpMb).
+
+Please note that some API requests must include a valid JSON Web Token (JWT) in the header for authentication and authorization purposes.
+
 
 ## Acknowledgements
 
