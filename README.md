@@ -44,7 +44,8 @@ This Node.js backend project supports a top-up game app and its admin dashboard.
     `npm start`
 
 6. Open admin dashboard: 
-    Access the app in your browser at `http://localhost:[PORT]`. Note that this url is also used for API base url
+    Access the app in your browser at `http://localhost:[PORT]`. 
+    Note: this url is also used for API base-url
 
 
 ## Import Example Data
@@ -62,6 +63,7 @@ It provides detailed information on how to interact with the API endpoints using
 
 ### Using the APIs
 The following APIs are available in this project:
+
 Base URL: `http://localhost:[PORT]`
 1. User authentication API
          - POST `/api/v1/auth/signup`: Register a new user.
