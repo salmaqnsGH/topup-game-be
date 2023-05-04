@@ -93,8 +93,10 @@ Please note that some API requests must include a valid JSON Web Token (JWT) in 
 ## View Admin Page
 1. Login: 
     Since admin dashboard cannot be accessed publicly, there is no register button on admin page. Register feature for admin will be developed in different page (Ongoing). For the moment, we can use generated user from provided data import [example data here](#import-example-data)
-        `Email: admbwa@gmail.com`
-        `Password: rahasia`
+
+    `Email: admbwa@gmail.com`
+    `Password: rahasia`
+    
     ![login](./.docs/login.png)
 2. Dashboard
     Access statistics and track progress.
