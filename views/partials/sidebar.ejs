@@ -12,16 +12,16 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
-            <a href="/dashboard" class="nav-link">
+            <a href="/dashboard" class="nav-link <%= title=="Dashboard" ? "active" : "" %>">
               <i class="nav-icon fa fa-home"></i>
               <p>
-                Beranda
+                Beranda 
               </p>
             </a>
           </li>
           <li class="nav-header">Master</li>
           <li class="nav-item">
-            <a href="/category" class="nav-link">
+            <a href="/category" class="nav-link <%= title=="Kategori" ? "active" : "" %>">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Kategori
@@ -29,44 +29,44 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/nominal" class="nav-link">
+            <a href="/nominal" class="nav-link <%= title=="Nominal" ? "active" : "" %>">
               <i class="nav-icon fa fa-calculator"></i>
               <p>
-                Nominal
+                Nominal 
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/voucher" class="nav-link">
+            <a href="/voucher" class="nav-link <%= title=="Voucher" ? "active" : "" %>">
               <i class="nav-icon far fa-image"></i>
               <p>
-                Voucher
+                Voucher 
               </p>
             </a>
           </li>
           <li class="nav-header">Metode Pembayaran</li>
           <li class="nav-item">
-            <a href="/bank" class="nav-link">
+            <a href="/bank" class="nav-link <%= title=="Bank" ? "active" : "" %>">
               <i class="nav-icon 	fa fa-suitcase"></i>
               <p>
-                Bank
+                Bank 
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/payment" class="nav-link">
+            <a href="/payment" class="nav-link <%= title=="Pembayaran" ? "active" : "" %>">
               <i class="nav-icon fa fa-credit-card"></i>
               <p>
-                Pembayaran
+                Pembayaran 
               </p>
             </a>
           </li>
           <li class="nav-header">Transaksi</li>
           <li class="nav-item">
-            <a href="/transaction" class="nav-link">
+            <a href="/transaction" class="nav-link <%= title=="Transaksi" ? "active" : "" %>">
               <i class="nav-icon 	fa fa-shopping-cart"></i>
               <p>
-                Transaksi
+                Transaksi 
               </p>
             </a>
           </li>
